@@ -3,10 +3,324 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Genel Kültür</title>
+    <title>Pasifik Ateş Çemberi</title>
+    <meta name="description" content="Pasifik Ateş Çemberi hakkında temel bilgiler, tektonik hareketler, depremler ve volkanik faaliyetler.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg-gradient: linear-gradient(135deg, #061826, #123d52 40%, #ff6b35 110%);
+        --accent-color: #ff6b35;
+        --text-color: #f0f4f8;
+        --card-bg: rgba(10, 28, 43, 0.75);
+      }
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--bg-gradient);
+        color: var(--text-color);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        padding: 3.5rem 1.5rem 2.5rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.18), transparent 60%),
+          radial-gradient(circle at 80% 30%, rgba(255, 107, 53, 0.25), transparent 70%);
+        z-index: 0;
+      }
+
+      header .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 4vw + 1rem, 3.75rem);
+        margin: 0 0 1rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      .tagline {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        color: rgba(240, 244, 248, 0.9);
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 0.9rem 2.5rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.92);
+        color: #123d52;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      .cta-button:hover,
+      .cta-button:focus {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.35);
+      }
+
+      main {
+        flex: 1;
+        padding: 0 1.5rem 4rem;
+      }
+
+      .content-section {
+        max-width: 1100px;
+        margin: 0 auto 3rem;
+        background: var(--card-bg);
+        padding: clamp(1.5rem, 4vw, 2.5rem);
+        border-radius: 24px;
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(6px);
+      }
+
+      .content-section h2 {
+        font-size: clamp(1.8rem, 2.5vw + 1rem, 2.6rem);
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: #ffe8dc;
+      }
+
+      .content-section p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .stat-card {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        padding: 1.5rem;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        transition: transform 0.25s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-6px);
+      }
+
+      .stat-card h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1rem;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: rgba(255, 232, 220, 0.9);
+      }
+
+      .stat-number {
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: var(--accent-color);
+        margin: 0;
+      }
+
+      figure {
+        margin: 2rem auto 0;
+        max-width: 960px;
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      figure img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      figure figcaption {
+        padding: 0.9rem 1.2rem;
+        background: rgba(7, 18, 26, 0.85);
+        font-size: 0.95rem;
+        color: rgba(240, 244, 248, 0.85);
+      }
+
+      ul.highlights {
+        padding-left: 1.2rem;
+        margin: 1.5rem 0 0;
+      }
+
+      ul.highlights li {
+        margin-bottom: 0.75rem;
+      }
+
+      .timeline {
+        position: relative;
+        margin-top: 1.5rem;
+        padding-left: 1.5rem;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0.35rem;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .timeline-entry {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 1.3rem;
+      }
+
+      .timeline-entry::before {
+        content: "";
+        position: absolute;
+        left: -0.3rem;
+        top: 0.2rem;
+        width: 14px;
+        height: 14px;
+        background: var(--accent-color);
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.25);
+      }
+
+      footer {
+        padding: 2.5rem 1.5rem 2rem;
+        text-align: center;
+        color: rgba(240, 244, 248, 0.75);
+        font-size: 0.95rem;
+      }
+
+      footer a {
+        color: #ffe8dc;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>Genel Kültür</h1>
-    <p>Merhaba! Bu benim ilk GitHub Pages sayfam 👋</p>
+    <header>
+      <div class="hero-content">
+        <h1>Pasifik Ateş Çemberi</h1>
+        <p class="tagline">Dünya çapındaki depremlerin ve volkanik patlamaların %90'ına ev sahipliği yapan devasa tektonik levha sınırının izinde.</p>
+        <a class="cta-button" href="#kesfet">Keşfetmeye Başla</a>
+      </div>
+    </header>
+    <main id="kesfet">
+      <section class="content-section" aria-labelledby="ozet-baslik">
+        <h2 id="ozet-baslik">Kısaca Ateş Çemberi</h2>
+        <p>Pasifik Ateş Çemberi, Pasifik Okyanusu'nu çevreleyen ve bir dizi kıtasal ve okyanusal tektonik levha sınırından oluşan geniş bir kuşaktır. Bu bölge, yoğun levha hareketi nedeniyle hem sık sık depremlerin hem de güçlü volkanik patlamaların görüldüğü dinamik bir jeolojik kuşağı temsil eder.</p>
+        <div class="grid" role="list">
+          <article class="stat-card" role="listitem">
+            <h3>Dünya Depremleri</h3>
+            <p class="stat-number">%90</p>
+            <p>Yerkürenin kaydedilen sismik aktivitesinin ezici çoğunluğu bu çember üzerinde oluşur.</p>
+          </article>
+          <article class="stat-card" role="listitem">
+            <h3>Aktif Volkanlar</h3>
+            <p class="stat-number">~750</p>
+            <p>Dünyadaki aktif volkanların üçte ikisinden fazlası Pasifik çevresinde konumlanır.</p>
+          </article>
+          <article class="stat-card" role="listitem">
+            <h3>Levha Sınırı</h3>
+            <p class="stat-number">40.000 km</p>
+            <p>Levha sınırları Pasifik kıyıları boyunca uzanarak devasa bir ateş halkası oluşturur.</p>
+          </article>
+        </div>
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Pacific_Ring_of_Fire.svg/1280px-Pacific_Ring_of_Fire.svg.png" alt="Pasifik Ateş Çemberi haritası" loading="lazy">
+          <figcaption>Pasifik kıyıları boyunca uzanan levha sınırları; kırmızı hatlar dalma-batma zonlarını, üçgenler volkanik yayları temsil eder.</figcaption>
+        </figure>
+      </section>
+
+      <section class="content-section" aria-labelledby="jeoloji-baslik">
+        <h2 id="jeoloji-baslik">Jeolojik Arka Plan</h2>
+        <p>Ateş Çemberi'nin kökeni, levha tektoniği kuramının doğrudan bir sonucudur. Pasifik levhası, çevresindeki Kuzey Amerika, Güney Amerika, Filipin, Avustralya, Nazca ve diğer levhaların altına dalar. Bu süreç, <strong>dalma-batma</strong> olarak bilinen ve derin deniz hendekleri ile volkanik yayların ortaya çıkmasına neden olan bir mekanizmadır.</p>
+        <ul class="highlights">
+          <li><strong>Sürtünme ve gerilim</strong> levha sınırlarında birikir, bu da sismik enerji salınımını yani depremleri tetikler.</li>
+          <li>Dalma-batan levhanın erimesiyle oluşan magmalar, yüzeye çıkıp yanardağları besler.</li>
+          <li>Levha hareketleri yalnızca kıtasal alanları değil, Pasifik Okyanusu tabanını da şekillendirir.</li>
+        </ul>
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Subduction-en.svg/1280px-Subduction-en.svg.png" alt="Dalma-batma zonunun şematik gösterimi" loading="lazy">
+          <figcaption>Dalma-batma zonunda okyanusal levha, kıtasal levhanın altına dalarken erir ve volkanik etkinliği tetikler.</figcaption>
+        </figure>
+      </section>
+
+      <section class="content-section" aria-labelledby="etkiler-baslik">
+        <h2 id="etkiler-baslik">Depremler ve Volkanik Etkiler</h2>
+        <p>Pasifik Ateş Çemberi, tarih boyunca medeniyetleri etkileyen yıkıcı depremlere ve volkanik patlamalara sahne olmuştur. Bu olaylar, bölge ülkelerinde afet yönetimi planlarının sürekli olarak güncellenmesini ve teknolojik gözlem ağlarının güçlendirilmesini gerektirir.</p>
+        <div class="timeline" aria-label="Önemli olaylar zaman çizelgesi">
+          <article class="timeline-entry">
+            <h3>1960 &mdash; Valdivia Depremi</h3>
+            <p>Kayıtlara geçen en güçlü deprem (Mw 9.5) Şili kıyılarında meydana geldi ve Pasifik boyunca tsunamiye yol açtı.</p>
+          </article>
+          <article class="timeline-entry">
+            <h3>1991 &mdash; Pinatubo Patlaması</h3>
+            <p>Filipinler'deki Pinatubo Yanardağı'nın dev patlaması, küresel iklimi birkaç yıl süreyle soğuttu.</p>
+          </article>
+          <article class="timeline-entry">
+            <h3>2011 &mdash; Tōhoku Depremi</h3>
+            <p>Japonya'da meydana gelen 9.0 büyüklüğündeki deprem ve tsunami, modern afet önlemlerinin önemini ortaya koydu.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section" aria-labelledby="hazirlik-baslik">
+        <h2 id="hazirlik-baslik">Hazırlık ve Bilimsel İzleme</h2>
+        <p>Bilim insanları, sismik ağlar, GPS tabanlı jeodezik ölçümler ve uydu teknolojileri ile Ateş Çemberi boyunca gerçekleşen hareketleri izler. Bölge ülkeleri, erken uyarı sistemleri ve toplum temelli afet eğitimi ile riskleri azaltmayı hedefler.</p>
+        <div class="grid" role="list">
+          <article class="stat-card" role="listitem">
+            <h3>Erken Uyarı</h3>
+            <p>Japonya ve Şili gibi ülkeler, saniyeler içinde deprem sinyali alıp halka bildiren sistemler geliştirir.</p>
+          </article>
+          <article class="stat-card" role="listitem">
+            <h3>Afet Eğitimi</h3>
+            <p>Bölge halkı, tahliye tatbikatları ve hazırlık çantaları sayesinde olası afetlere karşı daha dirençli hâle gelir.</p>
+          </article>
+          <article class="stat-card" role="listitem">
+            <h3>Uluslararası İşbirliği</h3>
+            <p>Pasifik Tsunami Uyarı Merkezi ve benzeri kuruluşlar, veri paylaşımıyla kıyı toplumlarını korur.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Bu sayfa, Pasifik Ateş Çemberi'nin jeodinamik önemine dair temel bilgileri sunmak için hazırlanmıştır. Daha fazla bilgi için <a href="https://earthquake.usgs.gov/" target="_blank" rel="noopener">USGS</a> ve <a href="https://volcano.si.edu/" target="_blank" rel="noopener">Smithsonian GVP</a> kaynaklarını ziyaret edin.</p>
+    </footer>
   </body>
 </html>
